@@ -4,12 +4,6 @@
 
   tasks:
 
-  - name: dnspython
-    pip:
-  #    name: dnspython
-      name: dnspython==1.16.0
-    delegate_to: localhost
-
   - name: DDNS
     nsupdate:
       key_name: "{{ ddns_key_name }}"
