@@ -7,4 +7,19 @@
   - name: DDNS
     include_role:
       name: ddns
+
+  - name: dnspython
+    pip:
+  #    name: dnspython
+      name: dnspython==1.16.0
+    delegate_to: localhost
+
+  - name: DDNS
+    nsupdate:
+      key_name: "{{ ddns_key_name }}"
+      key_secret: "{{ ddns_key_secret }}"
+      server: "{{ ddns_key_server }}"
+      zone: "{{ ddns_key_zone }}"
+      record: "{{ gce_name }}"
+      value: "{{ ansible_ssh_host }}"
     delegate_to: localhost
