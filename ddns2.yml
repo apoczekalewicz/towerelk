@@ -1,10 +1,8 @@
 ---
 - hosts: all
+  gather_facts: no
 
   tasks:
-  - name: DDNS
-    include_role:
-      name: ddns
 
   - name: dnspython
     pip:
