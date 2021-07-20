@@ -1,7 +1,5 @@
 ---
 - hosts: all
-  remote_user: tmp
-  become: yes
 
   tasks:
   - name: DDNS
