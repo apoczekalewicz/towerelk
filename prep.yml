@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  remote_user: rhepdstower
+  remote_user: tmp
   become: yes
 
   tasks:
